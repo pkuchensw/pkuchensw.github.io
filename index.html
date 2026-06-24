@@ -1,269 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Siwei Chen</title>
-  <meta name="description" content="Personal academic homepage of Siwei Chen, Peking University." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="page">
-    <aside class="sidebar">
-      <div class="profile-card">
-        <img class="avatar" src="assets/avatar.jpg" alt="Siwei Chen" />
-
-        <h1>Siwei Chen</h1>
-        <p class="chinese-name">陈思维</p>
-        <p class="role">Undergraduate Student</p>
-        <p class="affiliation">Yuanpei College, Peking University</p>
-
-        <div class="tag-list">
-          <span>LLM Systems</span>
-          <span>RL for LLMs</span>
-          <span>Post-training</span>
-          <span>ML Systems</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Siwei Chen</title>
+    <meta
+      name="description"
+      content="Academic homepage of Siwei Chen, undergraduate student at Peking University working on efficient LLM algorithms and systems."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Siwei Chen homepage">
+          <span class="brand-mark">SC</span>
+          <span>Siwei Chen</span>
+        </a>
+        <div class="nav-links">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
-
-        <div class="contact">
-          <a href="mailto:2300017751@stu.pku.edu.cn">2300017751@stu.pku.edu.cn</a>
-          <a href="https://github.com/pkuchensw" target="_blank" rel="noopener">GitHub: pkuchensw</a>
-          <span>Beijing, China</span>
-        </div>
-      </div>
-
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#news">News</a>
-        <a href="#education">Education</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#honors">Honors</a>
       </nav>
-    </aside>
+    </header>
 
-    <main class="content">
-      <section class="hero" id="about">
-        <p class="eyebrow">Personal Academic Homepage</p>
-        <h2>Hi, I am Siwei Chen.</h2>
-        <p class="lead">
-          I am currently an undergraduate student at Yuanpei College, Peking University,
-          majoring in Data Science and Big Data Technology. My research interests focus on
-          <strong>machine learning systems</strong>, <strong>LLM reinforcement learning</strong>,
-          and <strong>efficient post-training algorithms and systems</strong>.
-        </p>
-        <p>
-          I am passionate about exploring practical and scalable methods for improving large
-          language model training, reasoning, and deployment. I have a solid background in
-          mathematics and programming, and I enjoy working on research problems that combine
-          algorithmic ideas with system-level efficiency.
-        </p>
-
-        <div class="hero-links">
-          <a class="button primary" href="#publications">View Publications</a>
-          <a class="button" href="https://github.com/pkuchensw" target="_blank" rel="noopener">GitHub</a>
-          <a class="button" href="mailto:2300017751@stu.pku.edu.cn">Email Me</a>
-        </div>
-      </section>
-
-      <section id="news">
-        <div class="section-title">
-          <h2>News</h2>
-        </div>
-        <ul class="timeline">
-          <li>
-            <span class="date">2026.03</span>
-            <span>QLPO is under review.</span>
-          </li>
-          <li>
-            <span class="date">2026.01</span>
-            <span>DARTS is under review.</span>
-          </li>
-          <li>
-            <span class="date">2025</span>
-            <span>Beyond Sight is accepted to CVPR 2025.</span>
-          </li>
-          <li>
-            <span class="date">2025.05</span>
-            <span>Started research on efficient LLM reinforcement learning systems.</span>
-          </li>
-        </ul>
-      </section>
-
-      <section id="education">
-        <div class="section-title">
-          <h2>Education</h2>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div>
-              <h3>Peking University</h3>
-              <p>B.S. in Data Science and Big Data Technology, Yuanpei College</p>
-            </div>
-            <span>Sept 2023 – Present</span>
-          </div>
-          <ul>
-            <li>GPA: <strong>3.80 / 4.0</strong>; Major Rank: <strong>1 / 13</strong>; Overall Rank: 43 / 355.</li>
-            <li>Selected courses: Machine Learning, Data Structure and Algorithm, Information Theory, Advanced Algebra, Introduction to Computer Vision, Programming in Artificial Intelligence.</li>
-            <li>Teaching Assistant: Probability Theory and Statistics in Information Science; Outdoor Exploration.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div>
-              <h3>Tsinghua University High School</h3>
-              <p>High School Certificate</p>
-            </div>
-            <span>Sept 2017 – Jun 2023</span>
-          </div>
-          <ul>
-            <li>College entrance examination: 693 / 750.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="research">
-        <div class="section-title">
-          <h2>Research Experience</h2>
-        </div>
-
-        <div class="item featured">
-          <div class="item-header">
-            <div>
-              <h3>LLM Reinforcement Learning System Design</h3>
-              <p>Advisor: Prof. Bin Cui and Prof. Xupeng Miao</p>
-            </div>
-            <span>May 2025 – Present</span>
-          </div>
-          <p>
-            Reinforcement learning has become a cornerstone for improving the reasoning abilities
-            of large language models, but training efficiency is often limited by the straggler
-            effect caused by long-tail generations.
-          </p>
-          <ul>
-            <li>Proposed DARTS, a distribution-aware active rollout trajectory shaping paradigm.</li>
-            <li>Designed Dual End Sampling to encourage concise output distributions.</li>
-            <li>Integrated adaptive redundant allocation with token-level streaming to accelerate RL training while maintaining reasoning capacity.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div>
-              <h3>Efficient LLM Reinforcement Learning Algorithm</h3>
-              <p>Advisor: Prof. Bin Cui and Prof. Xupeng Miao</p>
-            </div>
-            <span>Dec 2025 – Mar 2026</span>
-          </div>
-          <ul>
-            <li>Studied length explosion in large reasoning models during RL training.</li>
-            <li>Proposed QLPO, a resampling-based variant of GRPO for implicit length control.</li>
-            <li>Improved the accuracy-length trade-off across models from 1.5B to 32B, reducing response length by 30%–70% while maintaining or improving reasoning performance.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="publications">
-        <div class="section-title">
-          <h2>Publications</h2>
-        </div>
-
-        <article class="publication">
-          <h3>DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning</h3>
-          <p class="authors">Yujie Wang†, <strong>Siwei Chen†</strong>, Longzan Luo†, Xinyi Liu, Xupeng Miao, Fangcheng Fu, Bin Cui</p>
-          <p class="venue">Under Review · Co-first Author</p>
-          <a href="https://openreview.net/forum?id=oFUfz5nsJc" target="_blank" rel="noopener">OpenReview</a>
-        </article>
-
-        <article class="publication">
-          <h3>QLPO: Quadrant-weighted Sampling for Length-aware Policy Optimization</h3>
-          <p class="authors"><strong>Siwei Chen</strong>, Siqi Chen, Xupeng Miao, Bin Cui</p>
-          <p class="venue">Under Review · First Author</p>
-          <a href="https://openreview.net/forum?id=WHc6ywhpSZ" target="_blank" rel="noopener">OpenReview</a>
-        </article>
-
-        <article class="publication">
-          <h3>Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge</h3>
-          <p class="authors">Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, Victor Shea-Jay Huang, <strong>Siwei Chen</strong>, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang</p>
-          <p class="venue">CVPR 2025</p>
-          <a href="https://arxiv.org/abs/2411.16824" target="_blank" rel="noopener">arXiv</a>
-        </article>
-      </section>
-
-      <section id="projects">
-        <div class="section-title">
-          <h2>Projects</h2>
-        </div>
-
-        <div class="grid">
-          <article class="project">
-            <h3>CoT Enhance</h3>
-            <p>
-              Utilizing chain-of-thought mechanisms to enhance LLM inference and training.
-              The project explores entropy-guided tree-of-thought and prompt-evolution strategies.
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Yuanpei College, Peking University</p>
+            <h1>Siwei Chen</h1>
+            <p class="lead">
+              Undergraduate student in Data Science and Big Data Technology, interested in efficient
+              algorithms and systems for large language models.
             </p>
-            <a href="https://github.com/pkuchensw/Cot-Enhance" target="_blank" rel="noopener">GitHub</a>
+            <p>
+              My current work focuses on algorithm-system co-design for efficient LLM post-training,
+              reinforcement learning, and emerging model architectures that make large models more
+              efficient, reliable, and deployable.
+            </p>
+            <div class="hero-actions" id="contact">
+              <a href="mailto:2300017751@stu.pku.edu.cn">Email</a>
+              <a href="https://github.com/pkuchensw">GitHub</a>
+              <span>Beijing, China</span>
+            </div>
+          </div>
+
+          <aside class="profile-panel" aria-label="Profile summary">
+            <div class="profile-visual" aria-hidden="true">
+              <img src="./scholar-mark.svg" alt="" />
+            </div>
+            <dl>
+              <div>
+                <dt>Program</dt>
+                <dd>B.S. Data Science and Big Data Technology</dd>
+              </div>
+              <div>
+                <dt>GPA</dt>
+                <dd>3.8 / 4.0</dd>
+              </div>
+              <div>
+                <dt>Research Focus</dt>
+                <dd>Efficient LLM RL, LLM systems, diffusion language models</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="research">
+        <div class="section-heading">
+          <p class="eyebrow">Research</p>
+          <h2>Current Directions</h2>
+        </div>
+        <div class="timeline">
+          <article class="entry">
+            <div class="entry-date">May 2025 - Present</div>
+            <div>
+              <h3>Efficient Reinforcement Learning for Large Language Models</h3>
+              <p class="meta">Advisors: Prof. Bin Cui and Prof. Xupeng Miao, Peking University</p>
+              <p>
+                Studying efficiency bottlenecks in LLM reinforcement learning, including long-tail
+                rollout lengths, straggler effects, and length explosion during training. This work
+                includes DARTS, a distribution-aware rollout shaping system, and QLPO, a length-aware
+                policy optimization method.
+              </p>
+            </div>
           </article>
 
-          <article class="project">
-            <h3>Usagi</h3>
-            <p>
-              A RAG-enhanced LLM question-answering framework for ICS courses. It supports
-              source tracing, predictive question generation, and learner cognitive state diagnosis.
-            </p>
-            <a href="https://github.com/pkuchensw/usagi-project" target="_blank" rel="noopener">GitHub</a>
+          <article class="entry">
+            <div class="entry-date">Feb 2026 - Present</div>
+            <div>
+              <h3>Efficient Diffusion Language Models</h3>
+              <p class="meta">Advisor: Prof. Fan Lai, University of Illinois Urbana-Champaign</p>
+              <p>
+                Exploring diffusion language models for efficient parallel generation, with attention
+                to the quality-efficiency trade-off, scalable training, long-block generation, and
+                practical serving efficiency.
+              </p>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">Feb 2026 - May 2026</div>
+            <div>
+              <h3>Context Management Benchmark for Long-Horizon LLM Agents</h3>
+              <p class="meta">Advisors: Prof. Bin Cui and Prof. Xupeng Miao, Peking University</p>
+              <p>
+                Worked on MemClaw-Bench, a capability-centered benchmark for evaluating context
+                management in compressed-context, long-horizon tool-using agents.
+              </p>
+            </div>
           </article>
         </div>
       </section>
 
-      <section id="honors">
-        <div class="section-title">
-          <h2>Honors</h2>
+      <section class="section" id="publications">
+        <div class="section-heading">
+          <p class="eyebrow">Publications</p>
+          <h2>Selected Papers</h2>
         </div>
+        <div class="publication-list">
+          <article class="publication">
+            <p class="pub-venue">ICML 2026</p>
+            <h3>DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning</h3>
+            <p>
+              Yujie Wang*, <strong>Siwei Chen*</strong>, Longzan Luo*, Xinyi Liu, Xupeng Miao,
+              Fangcheng Fu, Bin Cui. <span class="note">Co-first author.</span>
+            </p>
+            <a href="http://arxiv.org/abs/2605.30859">arxiv.org/abs/2605.30859</a>
+          </article>
 
-        <ul class="honors">
-          <li>2024–2025 Peking University Outstanding Research Award</li>
-          <li>2024–2025 Peking University Third-Class Scholarship</li>
-          <li>2023–2024 Peking University Freshman Scholarship</li>
-          <li>2023–2024 Peking University Second-Class Scholarship</li>
-          <li>2023–2024 Peking University Merit Student</li>
-          <li>2023 Beijing Merit Student</li>
-          <li>Second Prize, PKU Ultimate Frisbee Cup, 2024 and 2025</li>
-        </ul>
+          <article class="publication">
+            <p class="pub-venue">Under Review</p>
+            <h3>QLPO: Quadrant-weighted Sampling for Length-aware Policy Optimization</h3>
+            <p><strong>Siwei Chen</strong>, Siqi Chen, Xupeng Miao, Bin Cui. <span class="note">First author.</span></p>
+          </article>
+
+          <article class="publication">
+            <p class="pub-venue">Under Review</p>
+            <h3>MemClaw-Bench: A Capability-Centered Benchmark for Context Management in Long-Horizon Agents</h3>
+            <p><strong>Siwei Chen</strong>, Xupeng Miao, Bin Cui. <span class="note">First author.</span></p>
+          </article>
+
+          <article class="publication">
+            <p class="pub-venue">CVPR 2025</p>
+            <h3>Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge</h3>
+            <p>
+              Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, Victor Shea-Jay Huang,
+              <strong>Siwei Chen</strong>, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang.
+            </p>
+            <a href="https://arxiv.org/abs/2411.16824">arxiv.org/abs/2411.16824</a>
+          </article>
+        </div>
       </section>
 
-      <section id="more">
-        <div class="section-title">
-          <h2>Additional Information</h2>
+      <section class="section two-column" id="projects">
+        <div>
+          <div class="section-heading">
+            <p class="eyebrow">Projects</p>
+            <h2>Selected Work</h2>
+          </div>
+          <div class="compact-list">
+            <article>
+              <h3>Usagi: ICS Course Helper</h3>
+              <p>
+                Retrieval-augmented LLM question-answering framework with source tracing, predictive
+                question generation, and learner state diagnosis.
+              </p>
+              <a href="https://github.com/pkuchensw/usagi-project">GitHub</a>
+            </article>
+            <article>
+              <h3>MyTorch: Custom PyTorch for CNN Training</h3>
+              <p>
+                A CUDA, C++, and Python implementation covering basic kernels, Python-C bindings,
+                a simple computational graph, and CNN training for image recognition.
+              </p>
+              <a href="https://github.com/pkuchensw/mytorch">GitHub</a>
+            </article>
+          </div>
         </div>
-        <div class="info-grid">
-          <div>
-            <h3>Programming</h3>
-            <p>Python, C++, Rust</p>
-          </div>
-          <div>
-            <h3>Tools</h3>
-            <p>PyTorch, CUDA</p>
-          </div>
-          <div>
-            <h3>Language</h3>
-            <p>TOEFL: 5.5 / 6</p>
-          </div>
-          <div>
-            <h3>Interests</h3>
-            <p>Basketball, running, Ultimate Frisbee, mountain climbing.</p>
-          </div>
-        </div>
-      </section>
 
-      <footer>
-        <p>© 2026 Siwei Chen. Last updated: April 2026.</p>
-      </footer>
+        <aside class="side-section" aria-label="Education and honors">
+          <section>
+            <h2>Education</h2>
+            <p>
+              <strong>Yuanpei College, Peking University</strong><br />
+              B.S. in Data Science and Big Data Technology, 2023 - Present
+            </p>
+            <p class="meta">Major Rank: 1 / 13; Overall Rank: 43 / 355</p>
+          </section>
+
+          <section>
+            <h2>Honors</h2>
+            <ul>
+              <li>Peking University Outstanding Research Award, 2024-2025</li>
+              <li>Peking University Merit Student, 2023-2024</li>
+              <li>Peking University Freshman Scholarship, 2023-2024</li>
+              <li>Beijing Merit Student, 2023</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Skills</h2>
+            <p>Python, C++, Rust, PyTorch, CUDA</p>
+          </section>
+        </aside>
+      </section>
     </main>
-  </div>
-</body>
+
+    <footer class="footer">
+      <p>&copy; 2026 Siwei Chen</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
 </html>

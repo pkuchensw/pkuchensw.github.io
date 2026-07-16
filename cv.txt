@@ -1,0 +1,420 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage{url}
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Siwei Chen's CV},
+    pdfauthor={Siwei Chen},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Siwei Chen - Page \thepage{} of \pageref*{LastPage}}
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{}\hspace{\widthof{}}
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \placelastupdatedtext
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Siwei Chen}
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Beijing, China}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{2300017751@stu.pku.edu.cn}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}2300017751@stu.pku.edu.cn}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:188-1061-3228}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}18810613228}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/pkuchensw}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}pkuchensw}}%
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
+
+    \section{Personal Statement}
+    \begin{onecolentry}
+        I am currently a junior at Yuanpei College, Peking University, majoring in Data Science and Big Data Technology. I am deeply interested in Artificial Intelligence and motivated by the rapid development of large language models. My research interests focus on efficient LLM algorithms and systems, especially post-training methods such as reinforcement learning, as well as emerging efficient model architectures. With a solid foundation in mathematics and programming, I enjoy working on problems that require both theoretical understanding and practical system design. My current research explores how algorithm-system co-design can make large language models more efficient, reliable, and deployable.
+
+
+          %I am currently a junior at Yuanpei College, Peking University, with a keen research interest in Computer Science. I am passionate about exploring novel ideas and engaging in cutting-edge research. I have solid foundation in mathematics and programming and develop strong critical thinking and reasoning capabilities. I am also highly self-motivated and proficient in independent learning. My primary research interests focus on \textbf{machine learning systems} and \textbf{efficient LLM post-training algorithms and systems}, where I aim to explore more optimized and practical solutions for large language model deployment and enhancement.
+
+    \end{onecolentry}
+
+    \section{Education}
+        
+        
+        \begin{twocolentry}{   
+        \textit{Sept 2023 - Present}}
+            \textbf{Yuanpei College, Peking University}
+            
+            \textit{B.S. in Data Science and Big Data Technology;}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item GPA: \textbf{3.8/4.0}; Major Rank: 1/13; Overall Rank: 43/355
+                \item \textbf{Basic Courses:}
+                Machine Learning (99), Practice of Programming in C\&C++ (98), Data Structure and Algorithm (A) (95),  Probability theory and statistics in information science (95), Advanced Algebra (93)
+                \item \textbf{Advanced Courses:} Programming in Artificial Intelligence (99), Principles, Challenges, and Industrial Applications of Large Language Models (99), Directed Research in AI System (95)
+                \item \textbf{Teaching Assistant:} Probability theory and statistics in information science, Outdoor Exploration
+            \end{highlights}
+        \end{onecolentry}
+        
+        \vspace{0.1cm}
+        
+        \begin{twocolentry}{   
+        \textit{Sept 2017 – Jun 2023}}
+            \textbf{Tsinghua University High School}
+
+            \textit{High School Certificate;}
+        \end{twocolentry}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item College entrance examination: 693/750 
+            \end{highlights}
+        \end{onecolentry}
+        
+    \section{Research Experience}       
+        \vspace{0.1 cm}
+        \begin{twocolentry}{            
+        \textit{May 2025 - Present}}
+            \textbf{Efficient Reinforcement Learning for Large Language Models}
+            
+            \textit{Advisor: Prof. Bin Cui and Prof. Xupeng Miao, Peking University}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Investigated efficiency bottlenecks in LLM reinforcement learning, including the straggler effect caused by long-tail rollout lengths and the length explosion problem in LLM RL training.
+                
+                \item Proposed DARTS (Distribution-Aware Active Rollout Trajectory Shaping), a system-level optimization paradigm that actively reshapes the model's output distribution to reduce intra-prompt redundancy. Designed Dual-End Sampling, Adaptive Redundant Allocation, and a token-level streaming mechanism to accelerate RL training while preserving reasoning capability.
+                
+                \item Proposed QLPO, a resampling-based variant of GRPO that introduces implicit length control by favoring short-correct and long-incorrect trajectories without modifying the reward function.
+                
+                %\item Demonstrated consistent improvements in RL training efficiency and the accuracy--length trade-off across models from 1.5B to 32B.
+            \end{highlights}
+        \end{onecolentry}
+        
+        \vspace{0.1 cm}
+        \begin{twocolentry}{            
+        \textit{Feb 2026 - Present}}
+            \textbf{Efficient Diffusion Language Models}
+            
+            \textit{Advisor: Prof. Fan Lai, University of Illinois Urbana-Champaign}
+        \end{twocolentry}
+        
+        \vspace{0.20 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Exploring diffusion language models for efficient parallel generation, focusing on improving the quality--efficiency trade-off beyond standard autoregressive and block-diffusion decoding.
+                
+                \item Investigating scalable training and inference designs that enhance self-consistency, long-block generation, and practical serving efficiency.
+            \end{highlights}
+        \end{onecolentry}
+        
+        \vspace{0.2 cm}
+        \begin{twocolentry}{            
+        \textit{Feb 2026 - May 2026}}
+            \textbf{Context Management Benchmark for Long-Horizon LLM Agents}
+            
+            \textit{Advisor: Prof. Bin Cui and Prof. Xupeng Miao, Peking University}
+        \end{twocolentry}
+        
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Worked on MemClaw-Bench, a capability-centered benchmark for evaluating context management in long-horizon tool-using agents under compressed-context settings.
+                
+                \item Designed diagnostic tasks and evaluation protocols covering memory capabilities such as constraint tracking, version updating, procedure transfer, source conflict resolution, task resumption, and staleness judgment.
+            \end{highlights}
+        \end{onecolentry}
+        
+        
+    \section{Publications}    
+        \begin{samepage}
+            \begin{twocolentry}{
+                May 2025 - Jan 2026
+            }
+                \textbf{DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning (ICML 2026)}
+                \vspace{0.10 cm} \\
+                \mbox{Yujie Wang†},
+                \mbox{\textbf{\textit{Siwei Chen†}}}, \mbox{Longzan Luo†},
+                \mbox{Xinyi Liu},\mbox{ Xupeng Miao}, \mbox{Fangcheng Fu}, \mbox{Bin Cui} (Co-first author)
+            \end{twocolentry}
+            \vspace{0.10 cm}
+            \begin{onecolentry}
+        \href{http://arxiv.org/abs/2605.30859}{arxiv.org/abs/2605.30859}
+
+            \end{onecolentry}
+        \end{samepage}
+        \vspace{0.2 cm}
+
+
+       \begin{samepage}
+            \begin{twocolentry}{Dec 2025 - March 2026}
+                \textbf{QLPO: Quadrant-weighted sampling for Length-aware Policy Optimization (COLM 2026)}
+                \vspace{0.10 cm} \\
+                \textbf{\textit{Siwei Chen}}, Siqi Chen, Xupeng Miao, Bin Cui (First Author) 
+            \end{twocolentry}
+            \vspace{0.10 cm}
+            %\begin{onecolentry}
+            %    \href{https://openreview.net/forum?id=WHc6ywhpSZ}{Under Review}
+            %\end{onecolentry}
+        \end{samepage}
+        \vspace{0.2 cm}
+
+
+        
+        \begin{samepage}
+            \begin{twocolentry}{Feb 2026 - May 2026}
+                \textbf{MemClaw-Bench: A Capability-Centered Benchmark for Context Management in Long-Horizon Agents (Under Review)}
+                \vspace{0.10 cm} \\
+               \textbf{\textit{Siwei Chen}}, Xupeng Miao, Bin Cui (First Author) 
+            \end{twocolentry}
+            \vspace{0.10 cm}
+            %\begin{onecolentry}
+            %    \textit{Under Review}
+            %\end{onecolentry}
+        \end{samepage}
+        \vspace{0.2 cm}
+
+        
+        \begin{samepage}
+            \begin{twocolentry}{
+                Sept 2024 - Dec 2024
+            }
+                \textbf{Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge (CVPR 2025)}
+                \vspace{0.10 cm} \\
+                \mbox{Yaqi Zhao},\mbox{Yuanyang Yin}, \mbox{Lin Li}, \mbox{Mingan Lin}, \mbox{Victor Shea-Jay Huang}, \mbox{\textbf{\textit{Siwei Chen}}}, 
+                \mbox{Weipeng Chen}, \mbox{Baoqun Yin},\mbox{ Zenan Zhou}, \mbox{Wentao Zhang}
+            \end{twocolentry}
+            \vspace{0.10 cm}
+            \begin{onecolentry}
+        \href{https://arxiv.org/abs/2411.16824}{arxiv.org/abs/2411.16824}
+            \end{onecolentry}
+        \end{samepage}
+        \vspace{0.2 cm}
+    \iffalse
+    \begin{samepage}
+        \begin{twocolentry}{Dec 2024 - Feb 2025}
+            \textbf{Do Graph Diffusion Models Accurately Capture and Generate Substructure Distributions?}
+            \vspace{0.10 cm} \\
+            Xiyuan Wang, Yewei Liu, Lexi Pang, \textbf{\textit{Siwei Chen}}, Muhan Zhang
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \href{https://arxiv.org/abs/2502.02488}{arxiv.org/abs/2502.02488}
+        \end{onecolentry}
+    \end{samepage}
+    \vspace{0.2 cm}
+    \fi
+        
+           
+    \section{Projects}
+
+        \begin{twocolentry}{   
+        \textit{\href{https://github.com/pkuchensw/usagi-project}{Usagi project}}}
+            \textbf{Usagi: ICS course helper}
+        \end{twocolentry}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed a Retrieval-Augmented Generation enhanced LLM question-answering framework. Backed by a comprehensive corpus of learning materials, the system supports RAG-based source tracing, predictive question generation, and learner cognitive state diagnosis. Over 100 students have used our system and given positive feedback.
+                \item Tools used: Python, Vibe coding for front-end
+            \end{highlights}
+        \end{onecolentry}
+        
+        \vspace{0.2 cm} 
+        \begin{twocolentry}{ \textit{\href{https://github.com/pkuchensw/mytorch}{MyTorch}}} 
+        \textbf{MyTorch: Custom PyTorch for CNN training} \end{twocolentry} 
+        \begin{onecolentry} 
+            \begin{highlights} 
+                \item Implemented a custom PyTorch based on CUDA programming. My implementation includes basic kernels, encapsulation between Python and C, and the construction of a simple computational graph. The project can ultimately train a CNN for image recognition. 
+                \item Tools used: CUDA, C++, Python
+            \end{highlights} 
+        \end{onecolentry}
+        
+    \section{Honors and Awards}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item 2023 Beijing Merit Student
+                \item 2023-2024 Peking University Freshman Scholarship
+                \item 2023-2024 Peking University Second-Class Scholarship
+                \item 2023-2024 Peking University Merit Student
+                \item 2024-2025 Peking University third-Class Scholarship
+                \item 2024-2025 Peking University Outstanding Research Award
+            \end{highlights}
+        \end{onecolentry}
+        
+        
+            
+    
+    \section{Additional Information}
+        \begin{onecolentry}
+            \textbf{Programming Languages}: Python, C++,  Rust
+        \end{onecolentry}
+        
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+            \textbf{Tools}: PyTorch, CUDA
+        \end{onecolentry}
+        
+        \vspace{0.1cm}
+        
+        \begin{onecolentry}
+            \textbf{Language}: New TOEFL iBT: 5.5/6 (Reading 6.0, Listening 5.0, Writing 5.0, Speaking 5.0)
+        \end{onecolentry}
+         
+        \vspace{0.1 cm}
+    
+        \begin{onecolentry}
+            I enjoy all kinds of sports ranging from basketball, running to Ultimate Frisbee and mountain climbing. I am a member of the Shanying Club (Mountaineering Association of Peking University) and I won the second prize at the PKU Ultimate Frisbee Cup (2024,2025).
+        \end{onecolentry}
+\end{document}
+

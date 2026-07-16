@@ -299,13 +299,13 @@
 
        \begin{samepage}
             \begin{twocolentry}{Dec 2025 - March 2026}
-                \textbf{QLPO: Quadrant-weighted sampling for Length-aware Policy Optimization (COLM 2026)}
+                \textbf{QLPO: Quadrant-weighted sampling for Length-aware Policy Optimization}
                 \vspace{0.10 cm} \\
                 \textbf{\textit{Siwei Chen}}, Siqi Chen, Xupeng Miao, Bin Cui (First Author) 
             \end{twocolentry}
             \vspace{0.10 cm}
             %\begin{onecolentry}
-            %    \href{https://openreview.net/forum?id=WHc6ywhpSZ}{Under Review}
+            %    \href{https://openreview.net/forum?id=WHc6ywhpSZ}{COLM 2026}
             %\end{onecolentry}
         \end{samepage}
         \vspace{0.2 cm}

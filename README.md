@@ -21,7 +21,7 @@ Edit the semantic HTML in `index.html`. All six publication entries are visible 
 
 The layout uses a single content column with 17px body text and 16px publication metadata. Paper figures link to their full-resolution files. On narrow screens, content wraps without reducing the body font size.
 
-News includes paper releases, conference acceptances, and honors from the supplied resume. Award dates retain their academic-year ranges; acceptance entries use only the known year when the month is not documented.
+Publications follow the biography directly, without a News section. The framed profile photograph is 248px square on desktop and aligns with the bottom of the introductory text; smaller screens use responsive photo sizes.
 
 After changing the resume, rebuild the PDF and update the footer's last-updated date. All content and ordinary links remain usable without JavaScript; the theme button appears only when JavaScript is available. The supplied resume PDF predates the two September 2026 preprints; the homepage uses the verified arXiv metadata for these entries.
 

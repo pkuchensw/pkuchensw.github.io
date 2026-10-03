@@ -21,6 +21,8 @@ Edit the semantic HTML in `index.html`. All six publication entries are visible 
 
 The layout uses a single content column with 17px body text and 16px publication metadata. Paper figures link to their full-resolution files. On narrow screens, content wraps without reducing the body font size.
 
+News includes paper releases, conference acceptances, and honors from the supplied resume. Award dates retain their academic-year ranges; acceptance entries use only the known year when the month is not documented.
+
 After changing the resume, rebuild the PDF and update the footer's last-updated date. All content and ordinary links remain usable without JavaScript; the theme button appears only when JavaScript is available. The supplied resume PDF predates the two September 2026 preprints; the homepage uses the verified arXiv metadata for these entries.
 
 To rebuild the PDF using an existing LaTeX installation, create `.preview`, run the following twice to resolve page references, and copy `.preview/cv.pdf` to `assets/Siwei-Chen-CV.pdf`:
@@ -37,6 +39,8 @@ pdflatex -interaction=nonstopmode -halt-on-error '-output-directory=.preview' cv
 - BRISK-DLM figure: https://arxiv.org/html/2609.33390v1/figure/overview.png
 - DARTS method figure: https://arxiv.org/html/2605.30859v1/method3.png
 - Beyond Sight method figure: https://arxiv.org/html/2411.16824v1/method.png
+- QLPO framework figure: author-supplied `framework.pdf`, rendered to PNG at 2400px wide.
+- MemClaw-Bench framework figure: author-supplied `frame.png`, copied without modification.
 - Lucide icons: https://lucide.dev/ (ISC license, bundled in `assets/icons/LICENSE`).
 - Design references: https://knightnemo.github.io/ and https://pingzhitang.cv/.
 

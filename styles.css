@@ -54,7 +54,7 @@ main { max-width: 1184px; padding: 28px 32px 0; margin: auto; }
 .news { margin-top: 22px; }
 .news-list { list-style: none; margin: 0; padding: 0; }
 .news-list li { display: grid; grid-template-columns: 94px minmax(0, 1fr); gap: 12px; margin: 4px 0; font-size: 16px; }
-.news-list time { color: var(--venue); font-weight: 600; }
+.news-date { color: var(--venue); font-weight: 600; white-space: nowrap; }
 .publication-note { font-size: 15px; color: var(--muted); margin: -5px 0 2px; }
 .publication { display: grid; grid-template-columns: 208px minmax(0, 1fr); gap: 25px; align-items: center; padding: 16px 0; scroll-margin-top: 18px; }
 .publication + .publication { border-top: 1px solid var(--line); }
@@ -68,7 +68,6 @@ main { max-width: 1184px; padding: 28px 32px 0; margin: auto; }
 .venue strong { font-style: normal; }
 .paper-description { font-size: 16px; line-height: 1.45; margin-top: 5px; }
 .paper-links { display: flex; flex-wrap: wrap; gap: 4px 17px; margin-top: 5px; font-size: 16px; }
-.text-only { display: block; padding-top: 13px; padding-bottom: 13px; }
 .experience + .experience { margin-top: 16px; }
 .entry-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 3px 18px; margin-bottom: 3px; }
 .date { font-size: 16px; color: var(--muted); white-space: nowrap; font-weight: 400; }
@@ -122,7 +121,6 @@ main { max-width: 1184px; padding: 28px 32px 0; margin: auto; }
   .paper-description { margin-top: 4px; }
   .paper-links { gap: 9px 20px; }
   .paper-links a { padding: 2px 0; }
-  .text-only .authors { padding-top: 0; margin-top: 4px; }
   .entry-heading { flex-direction: column; gap: 2px; }
   .honors-list .date { float: none; display: block; margin-left: 0; font-size: 15px; }
   .honors-list li { margin-bottom: 7px; }

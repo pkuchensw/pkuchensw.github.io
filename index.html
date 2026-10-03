@@ -63,14 +63,23 @@
       <h2 id="publications-title">Publications &amp; Preprints</h2>
       <p class="publication-note">* Equal contribution</p>
       <div class="publication-list">
-        <article class="publication" id="paper-coevo">
-          <a class="paper-image" href="./assets/coevo-method.png" aria-label="View the full COEVO framework figure"><img src="./assets/coevo-method.png" alt="COEVO: the feedback loop between context evolution and parameter updates" width="800" height="480" loading="lazy" /></a>
+        <article class="publication" id="paper-darts">
+          <a class="paper-image" href="./assets/darts-method.png" aria-label="View the full DARTS method figure"><img src="./assets/darts-method.png" alt="DARTS adaptive trajectory sampling and redundancy allocation" width="800" height="480" loading="lazy" /></a>
           <div class="paper-content">
-            <h3><a href="https://arxiv.org/abs/2609.33398">COEVO: Co-Evolving Context and Parameters for Recursive Self-Improvement</a></h3>
-            <p class="authors"><strong>Siwei Chen</strong>, Xinping Bao, Xinyu Cai, Yuan Cao, Wan Jiang, Shaohong Chen</p>
-            <p class="venue">arXiv preprint, 2026</p>
-            <p class="paper-description">Jointly adapting model parameters and training context, guided by policy entropy and prompt-conditioned attention.</p>
-            <div class="paper-links"><a href="https://arxiv.org/abs/2609.33398">Paper</a><a href="https://arxiv.org/pdf/2609.33398">PDF</a><a href="./assets/citations/coevo.bib" download>BibTeX</a></div>
+            <h3><a href="https://arxiv.org/abs/2605.30859">DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning</a></h3>
+            <p class="authors">Yujie Wang*, <strong>Siwei Chen*</strong>, Longzan Luo*, Xinyi Liu, Xupeng Miao, Fangcheng Fu, Bin Cui</p>
+            <p class="venue"><strong>ICML 2026</strong></p>
+            <p class="paper-description">Distribution-aware trajectory sampling, adaptive redundancy allocation, and token-level streaming for up to 1.77&times; faster LLM reinforcement learning.</p>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2605.30859">Paper</a><a href="https://arxiv.org/pdf/2605.30859">PDF</a><a href="https://github.com/PKU-DAIR/DARTS">Code</a><a href="./assets/citations/darts.bib" download>BibTeX</a></div>
+          </div>
+        </article>
+        <article class="publication" id="paper-qlpo">
+          <a class="paper-image" href="./assets/qlpo-method.png" aria-label="View the full QLPO framework figure"><img src="./assets/qlpo-method.png" alt="QLPO training loop with quadrant-weighted sampling by reward and response length" width="2400" height="713" loading="lazy" /></a>
+          <div class="paper-content">
+            <h3>QLPO: Quadrant-weighted Sampling for Length-aware Policy Optimization</h3>
+            <p class="authors"><strong>Siwei Chen</strong>, Siqi Chen, Xupeng Miao, Bin Cui</p>
+            <p class="venue"><strong>COLM 2026</strong></p>
+            <p class="paper-description">A resampling-based GRPO variant that favors short-correct and long-incorrect trajectories, introducing implicit length control without changing the reward function.</p>
           </div>
         </article>
         <article class="publication" id="paper-brisk-dlm">
@@ -83,14 +92,23 @@
             <div class="paper-links"><a href="https://arxiv.org/abs/2609.33390">Paper</a><a href="https://arxiv.org/pdf/2609.33390">PDF</a><a href="./assets/citations/brisk-dlm.bib" download>BibTeX</a></div>
           </div>
         </article>
-        <article class="publication" id="paper-darts">
-          <a class="paper-image" href="./assets/darts-method.png" aria-label="View the full DARTS method figure"><img src="./assets/darts-method.png" alt="DARTS adaptive trajectory sampling and redundancy allocation" width="800" height="480" loading="lazy" /></a>
+        <article class="publication" id="paper-coevo">
+          <a class="paper-image" href="./assets/coevo-method.png" aria-label="View the full COEVO framework figure"><img src="./assets/coevo-method.png" alt="COEVO: the feedback loop between context evolution and parameter updates" width="800" height="480" loading="lazy" /></a>
           <div class="paper-content">
-            <h3><a href="https://arxiv.org/abs/2605.30859">DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning</a></h3>
-            <p class="authors">Yujie Wang*, <strong>Siwei Chen*</strong>, Longzan Luo*, Xinyi Liu, Xupeng Miao, Fangcheng Fu, Bin Cui</p>
-            <p class="venue"><strong>ICML 2026</strong></p>
-            <p class="paper-description">Distribution-aware trajectory sampling, adaptive redundancy allocation, and token-level streaming for up to 1.77&times; faster LLM reinforcement learning.</p>
-            <div class="paper-links"><a href="https://arxiv.org/abs/2605.30859">Paper</a><a href="https://arxiv.org/pdf/2605.30859">PDF</a><a href="https://github.com/PKU-DAIR/DARTS">Code</a><a href="./assets/citations/darts.bib" download>BibTeX</a></div>
+            <h3><a href="https://arxiv.org/abs/2609.33398">COEVO: Co-Evolving Context and Parameters for Recursive Self-Improvement</a></h3>
+            <p class="authors"><strong>Siwei Chen</strong>, Xinping Bao, Xinyu Cai, Yuan Cao, Wan Jiang, Shaohong Chen</p>
+            <p class="venue">arXiv preprint, 2026</p>
+            <p class="paper-description">Jointly adapting model parameters and training context, guided by policy entropy and prompt-conditioned attention.</p>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2609.33398">Paper</a><a href="https://arxiv.org/pdf/2609.33398">PDF</a><a href="./assets/citations/coevo.bib" download>BibTeX</a></div>
+          </div>
+        </article>
+        <article class="publication" id="paper-memclaw">
+          <a class="paper-image" href="./assets/memclaw-method.png" aria-label="View the full MemClaw-Bench framework figure"><img src="./assets/memclaw-method.png" alt="MemClaw-Bench: multi-episode tasks, context management, agent execution, and oracle-based diagnosis across eight memory capabilities" width="1692" height="930" loading="lazy" /></a>
+          <div class="paper-content">
+            <h3>MemClaw-Bench: A Capability-Centered Benchmark for Context Management in Long-Horizon Agents</h3>
+            <p class="authors"><strong>Siwei Chen</strong>, Xupeng Miao, Bin Cui</p>
+            <p class="venue">Under review</p>
+            <p class="paper-description">Evaluating constraint tracking, version updating, procedure transfer, source conflict resolution, task resumption, and staleness judgment under compressed context.</p>
           </div>
         </article>
         <article class="publication" id="paper-beyond-sight">
@@ -101,24 +119,6 @@
             <p class="venue"><strong>CVPR 2025</strong></p>
             <p class="paper-description">Multi-granularity visual supervision to improve cognitive alignment between vision encoders and large language models.</p>
             <div class="paper-links"><a href="https://arxiv.org/abs/2411.16824">Paper</a><a href="https://arxiv.org/pdf/2411.16824">PDF</a><a href="./assets/citations/beyond-sight.bib" download>BibTeX</a></div>
-          </div>
-        </article>
-        <article class="publication" id="paper-qlpo">
-          <a class="paper-image" href="./assets/qlpo-method.png" aria-label="View the full QLPO framework figure"><img src="./assets/qlpo-method.png" alt="QLPO training loop with quadrant-weighted sampling by reward and response length" width="2400" height="713" loading="lazy" /></a>
-          <div class="paper-content">
-            <h3>QLPO: Quadrant-weighted Sampling for Length-aware Policy Optimization</h3>
-            <p class="authors"><strong>Siwei Chen</strong>, Siqi Chen, Xupeng Miao, Bin Cui</p>
-            <p class="venue"><strong>COLM 2026</strong></p>
-            <p class="paper-description">A resampling-based GRPO variant that favors short-correct and long-incorrect trajectories, introducing implicit length control without changing the reward function.</p>
-          </div>
-        </article>
-        <article class="publication" id="paper-memclaw">
-          <a class="paper-image" href="./assets/memclaw-method.png" aria-label="View the full MemClaw-Bench framework figure"><img src="./assets/memclaw-method.png" alt="MemClaw-Bench: multi-episode tasks, context management, agent execution, and oracle-based diagnosis across eight memory capabilities" width="1692" height="930" loading="lazy" /></a>
-          <div class="paper-content">
-            <h3>MemClaw-Bench: A Capability-Centered Benchmark for Context Management in Long-Horizon Agents</h3>
-            <p class="authors"><strong>Siwei Chen</strong>, Xupeng Miao, Bin Cui</p>
-            <p class="venue">Under review</p>
-            <p class="paper-description">Evaluating constraint tracking, version updating, procedure transfer, source conflict resolution, task resumption, and staleness judgment under compressed context.</p>
           </div>
         </article>
       </div>
